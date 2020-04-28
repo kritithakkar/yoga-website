@@ -1,0 +1,35 @@
+
+<div class="Frame">
+    <h2><a  href="/login">Sign In</a>
+        <a href="/signup"> Sign Up</a></h2> 
+<form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
+      
+<input type="text" #fullName="ngModel" [(ngModel)]="userService.selectedUser.fullName" name="fullName" placeholder="Full Name"
+required [ngClass]="{'invalid-textbox':signUpForm.submitted && !fullName.valid}">
+<span *ngIf="signUpForm.submitted && !fullName.valid">
+    <label class="validation-message">This feild is required!</label>
+</span> 
+
+<input type="text" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="Email"
+required [pattern]="emailRegex" [ngClass]="{'invalid-textbox':signUpForm.submitted && !email.valid}">
+<span *ngIf="signUpForm.submitted && email.errors">
+    <label *ngIf="email.errors.required" class="validation-message">This feild is required</label>
+    <label *ngIf="email.errors.pattern" class="validation-message">Invalid Syntax of email</label>
+</span> 
+
+<input type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Password"
+minlength="4" required [ngClass]="{'invalid-textbox': signUpForm.submitted && !password.valid}">
+<span *ngIf="signUpForm.submitted && password.errors">
+    <label *ngIf="password.errors.required" class="validation-message">This feild is required</label>
+    <label *ngIf="password.errors.minlength" class="validation-message">Password atleast contains 4 character</label>
+</span>
+<input type="submit" value="Sign Up">
+</form>
+</div>
+<!--Succes Message-->
+<div class="success" *ngIf="showSuccessMessage">
+Saved Successfully
+</div>
+<div class="alert" *ngIf="showError">
+ {{showErrorMessage}}
+</div>

@@ -1,0 +1,88 @@
+.Frame
+{
+    margin-top: 12%;
+    margin-left: 33%;
+    width: 35%;
+}
+a
+{
+    border-radius: 8px;
+}
+a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  a:hover, a:active {
+    background-color: green; 
+  }
+  
+
+
+  input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+
+  input[type=password]
+  {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  div {
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  div.success
+  {
+   background-color: green;
+   color: white;
+   border-radius: 5px;
+   width: 35%;
+   margin-left: 33%;
+  }
+  div.alert
+  {
+      border-radius: 5px;
+  background-color: red;
+  color: white;
+  width: 35%;
+   margin-left: 33%;
+  }
+  label.validation-message
+  {
+      color:red;
+  }
+
+  
